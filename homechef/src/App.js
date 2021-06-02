@@ -16,16 +16,16 @@ function App() {
         console.log(result);
         setRecipes(result.data.hits);
         setQuery("");
-    };
+    }
 
     const onChange = e => {
         setQuery(e.target.value);
-    };
+    }
 
     const onSubmit = e => {
         e.preventDefault(); 
         getData();
-    };
+    }
 
     return (
         <div className="App">
