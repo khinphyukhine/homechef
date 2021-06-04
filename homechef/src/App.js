@@ -1,8 +1,11 @@
 import React, {useState} from "react";
 import "./App.css";
 import Axios from "axios";
+import {v4 as uuidv4} from 'uuid';
+import Recipe from "./ components/Recipe"
+import Alert from "./ components/Alert";
 
-function App() {
+export default function App() {
     const [query, setQuery] = useState("");
     const [recipes, setRecipes] = useState([]);
 
@@ -31,6 +34,7 @@ function App() {
         <div className="App">
             <h1>Home Chef</h1>
             <form className="search-form" onSubmit={onSubmit}>
+                <Alert/> 
                 <input 
                 type="text" 
                 placeholder="What do you feel like making today?" 
@@ -41,9 +45,8 @@ function App() {
                 <input type="submit" value="Search" />
             </form>
             <div className="recipes">
-                {recipes !== [] && recipes.map(recipe => <h2>{recipe.recipe.label}</h2>)} 
+                {recipes !== [] && recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe}/>)} 
             </div>
         </div> 
     );
 }
-export default App;
