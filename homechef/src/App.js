@@ -4,6 +4,7 @@ import Axios from "axios";
 import {v4 as uuidv4} from 'uuid';
 import Recipe from "./ components/Recipe"
 import Alert from "./ components/Alert";
+import NavBar from "./ components/navbar/NavBar"
 
 export default function App() {
     const [query, setQuery] = useState("");
@@ -42,22 +43,27 @@ export default function App() {
     }
 
     return (
-        <div className="App">
-            <h1>Home Chef</h1>
-            <form className="search-form" onSubmit={onSubmit}>
-                {alert !== "" && <Alert alert={alert}/>}
-                <input 
-                type="text" 
-                placeholder="What do you feel like making today?" 
-                autoComplete="off" 
-                onChange={onChange} 
-                value={query} 
-                />
-                <input type="submit" value="Search" />
-            </form>
-            <div className="recipes">
-                {recipes !== [] && recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe}/>)} 
+        <div>
+            <div>
+                <NavBar/>
             </div>
-        </div> 
+            <div className="App">
+                <h1>Home Chef</h1>
+                <form className="search-form" onSubmit={onSubmit}>
+                    {alert !== "" && <Alert alert={alert}/>}
+                    <input 
+                    type="text" 
+                    placeholder="What do you feel like making today?" 
+                    autoComplete="off" 
+                    onChange={onChange} 
+                    value={query} 
+                    />
+                    <input type="submit" value="Search" />
+                </form>
+                <div className="recipes">
+                    {recipes !== [] && recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe}/>)} 
+                </div>
+            </div> 
+        </div>
     );
 }
