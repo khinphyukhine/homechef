@@ -43,9 +43,9 @@ export default function App() {
     }
 
     return (
-        <div>
-            <div>
-                <NavBar/>
+        <div className='display'>
+            <div className="navbar">
+                    <NavBar/>
             </div>
             <div className="App">
                 <h1>Home Chef</h1>
