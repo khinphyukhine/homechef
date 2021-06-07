@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 import Recipe from "./ components/Recipe"
 import Alert from "./ components/Alert";
 import NavBar from "./ components/navbar/NavBar"
-//import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 export default function App() {
     const [query, setQuery] = useState("");
