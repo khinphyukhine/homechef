@@ -1,11 +1,10 @@
 import React, {useState} from "react";
-import "./App.css";
+import "./Home.css";
 import Axios from "axios";
 import {v4 as uuidv4} from 'uuid';
-import Recipe from "./ components/Recipe"
-import Alert from "./ components/Alert";
-import NavBar from "./ components/navbar/NavBar"
-import {BrowserRouter as Router} from 'react-router-dom';
+import Recipe from "../ components/Recipe"
+import Alert from "../ components/Alert";
+import NavBar from "../navbar/NavBar"
 
 export default function App() {
     const [query, setQuery] = useState("");
